@@ -1,3 +1,58 @@
-[gd_scene format=3 uid="uid://xy6rmst8r1kf"]
+[gd_scene load_steps=6 format=3 uid="uid://xy6rmst8r1kf"]
+
+[ext_resource type="Script" path="res://char.gd" id="1_gcuix"]
+[ext_resource type="Texture2D" uid="uid://bokk2gswcpfnp" path="res://icon.svg" id="2_xcdbl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b28y0"]
+size = Vector2(1149, 90.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm634"]
+size = Vector2(64.5, 559.125)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6vgo"]
+radius = 72.0
+height = 204.0
 
 [node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576.5, 601.25)
+shape = SubResource("RectangleShape2D_b28y0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 280)
+shape = SubResource("RectangleShape2D_wm634")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1148, 281)
+shape = SubResource("RectangleShape2D_wm634")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1.0
+offset_top = 556.0
+offset_right = 1152.0
+offset_bottom = 637.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = -27.0
+offset_right = 34.0
+offset_bottom = 565.0
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 1114.0
+offset_top = -1.0
+offset_right = 1175.0
+offset_bottom = 564.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(884, 126)
+script = ExtResource("1_gcuix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_i6vgo")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-1, 0)
+texture = ExtResource("2_xcdbl")
