@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqjy2l1ushxvq"
-path="res://.godot/imported/tiles.png-85abf07ff56ac1b59b6ccaf58465c6c4.ctex"
+uid="uid://c1vii1p31o2gl"
+path="res://.godot/imported/buton_off.png-639c20f370aa639c052d27b7200dffe2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/tiles.png"
-dest_files=["res://.godot/imported/tiles.png-85abf07ff56ac1b59b6ccaf58465c6c4.ctex"]
+source_file="res://img/buton_off.png"
+dest_files=["res://.godot/imported/buton_off.png-639c20f370aa639c052d27b7200dffe2.ctex"]
 
 [params]
 

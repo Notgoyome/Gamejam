@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqjy2l1ushxvq"
-path="res://.godot/imported/tiles.png-85abf07ff56ac1b59b6ccaf58465c6c4.ctex"
+uid="uid://ca0yf43mxemds"
+path="res://.godot/imported/lever_off.png-1fd6cd03e9c77709793dd45ec9022d96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/tiles.png"
-dest_files=["res://.godot/imported/tiles.png-85abf07ff56ac1b59b6ccaf58465c6c4.ctex"]
+source_file="res://img/lever_off.png"
+dest_files=["res://.godot/imported/lever_off.png-1fd6cd03e9c77709793dd45ec9022d96.ctex"]
 
 [params]
 
