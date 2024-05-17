@@ -101,10 +101,10 @@ flat = true
 
 [node name="Menu2" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 1936.0
-offset_top = -13.0
-offset_right = 3082.0
-offset_bottom = 649.0
+offset_left = 1144.0
+offset_top = -36.0
+offset_right = 2290.0
+offset_bottom = 626.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Menu2"]
 layout_mode = 2
@@ -162,8 +162,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_tdmud")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wp12x")
 text = "Back"
 flat = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="pressed" from="Menu1/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu1/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
