@@ -10,8 +10,8 @@ size = Vector2(1149, 90.5)
 size = Vector2(64.5, 559.125)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6vgo"]
-radius = 72.0
-height = 204.0
+radius = 62.0
+height = 124.0
 
 [node name="Node2D" type="Node2D"]
 
