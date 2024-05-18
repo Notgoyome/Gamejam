@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b54mr3y0r6cmy"]
+
+[ext_resource type="Texture2D" uid="uid://b7mvwlvnnrm2u" path="res://img/fire_particle.png" id="1_0hr8c"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l7nf8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n40k5"]
+particle_flag_disable_z = true
+angle_min = -225.8
+angle_max = 136.1
+direction = Vector3(1, 2.08165e-12, 2.08165e-12)
+gravity = Vector3(2.08165e-12, -80, 2.08165e-12)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ffymy"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(25, -9)
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+modulate = Color(0.87181, 0.490211, 0.583046, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_l7nf8")
+scale = Vector2(0.5, 0.5)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_n40k5")
+texture = ExtResource("1_0hr8c")
+lifetime = 0.8
+speed_scale = 3.0
+randomness = 0.29
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_ffymy")
+position = Vector2(-1, -4)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_n40k5")
+texture = ExtResource("1_0hr8c")
+lifetime = 0.6
+speed_scale = 2.0
+explosiveness = 0.25

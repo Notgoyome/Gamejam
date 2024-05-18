@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6wrfxyf4guse"]
+
+[ext_resource type="Texture2D" uid="uid://b7mvwlvnnrm2u" path="res://img/fire_particle.png" id="1_qdd0l"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ffymy"]
+
+[sub_resource type="Curve" id="Curve_jnx0n"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.547532), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_t1a53"]
+curve = SubResource("Curve_jnx0n")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mjhx2"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+direction = Vector3(1, 2.08165e-12, 2.08165e-12)
+angular_velocity_max = 720.0
+gravity = Vector3(2.08165e-12, -80, 2.08165e-12)
+scale_min = 0.4
+scale_max = 1.6
+scale_curve = SubResource("CurveTexture_t1a53")
+turbulence_noise_strength = 0.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[node name="FireComponent" type="Node2D"]
+position = Vector2(25, -9)
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+modulate = Color(1, 0.615686, 1, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_ffymy")
+position = Vector2(-2, -8)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_mjhx2")
+texture = ExtResource("1_qdd0l")
+speed_scale = 2.0
+explosiveness = 0.25
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_ffymy")
+position = Vector2(-1, -4)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_mjhx2")
+texture = ExtResource("1_qdd0l")
+lifetime = 0.8
+speed_scale = 2.0
+explosiveness = 0.25

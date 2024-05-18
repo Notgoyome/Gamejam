@@ -2,12 +2,12 @@ extends TileMap
 
 @onready var timer = $Timer
 
-var coords_list = [[4,5],[7,5],[7,9], [4,9]]
-var output_list = [[coords_list[0], coords_list[1]],
-				   [coords_list[1], coords_list[2]],
-				   [coords_list[2], coords_list[3]],
-				   [coords_list[3], coords_list[0]]]
-var pipe_output_list = [[4,8],[5,5],[7,6],[6,9]]
+var coords_list = [[4,5],[7,5],[7,9], [4,9]] # rotated pipe clockwise (down to right), (right to down), (up to left), (left to up)
+var output_list = [[coords_list[0], coords_list[1]], # upper pipe can only be linked with these
+				   [coords_list[1], coords_list[2]], # right pipe can only be linked with these
+				   [coords_list[2], coords_list[3]], # lower pipe can only be linked with these
+				   [coords_list[3], coords_list[0]]] # left pipe can only be linked with these
+var pipe_output_list = [[4,8],[5,5],[7,6],[6,9]] # output of the pipe
 var pipe_input : Vector2i = Vector2i(1, 7)
 
 # Called when the node enters sthe scene tree for the first time.
@@ -17,8 +17,7 @@ func _ready():
 
 func spread_gas():
 	#look for pipe input in the map
-	var input_coords = get_cell_atlas_coords(0, pipe_input)
-
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	spread_gas()
