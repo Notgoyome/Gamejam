@@ -1,10 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2k318ixartie"]
+[gd_scene load_steps=11 format=3 uid="uid://c2k318ixartie"]
 
 [ext_resource type="Script" path="res://char.gd" id="1_61kfk"]
 [ext_resource type="Texture2D" uid="uid://ckndupig8g6r1" path="res://img/player_idle.png" id="2_4caea"]
+[ext_resource type="Texture2D" uid="uid://b7mvwlvnnrm2u" path="res://img/fire_particle.png" id="3_su7ig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adq2i"]
 size = Vector2(18, 24)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n40k5"]
+particle_flag_disable_z = true
+angle_min = -225.8
+angle_max = 136.1
+direction = Vector3(1, 2.08165e-12, 2.08165e-12)
+gravity = Vector3(2.08165e-12, -80, 2.08165e-12)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rn885"]
 atlas = ExtResource("2_4caea")
@@ -50,9 +61,41 @@ script = ExtResource("1_61kfk")
 position = Vector2(24, -16)
 shape = SubResource("RectangleShape2D_adq2i")
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(25, -9)
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Node2D"]
+modulate = Color(1, 0.466667, 0.407843, 1)
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_n40k5")
+texture = ExtResource("3_su7ig")
+lifetime = 0.8
+speed_scale = 3.0
+randomness = 0.29
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(-1, -4)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_n40k5")
+texture = ExtResource("3_su7ig")
+lifetime = 0.6
+speed_scale = 2.0
+explosiveness = 0.25
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(24, -28)
 sprite_frames = SubResource("SpriteFrames_giym8")
 animation = &"idle"
-frame_progress = 0.491442
+frame_progress = 0.153067
+
+[node name="FireParticle" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -3)
+scale = Vector2(0.498617, 0.5)
+texture = ExtResource("3_su7ig")
