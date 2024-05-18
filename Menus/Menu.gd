@@ -1,7 +1,9 @@
 extends Control
 
 var transition_duration = 0.5
+var menu_max_travel = 60
 
+var center_of_screen = Vector2(0, 0)
 var menu_origin_position = Vector2(0, 0)
 var menu_origin_size = Vector2(0, 0)
 
@@ -13,10 +15,17 @@ var menu_stack := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var rect = get_viewport_rect()
+	center_of_screen = position + rect.size / 2
 	menu_origin_position = Vector2(0, 0)
 	menu_origin_size = get_viewport_rect().size
 	current_menu = menu1
 
+func _process(delta):
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+	var dist_to_mouse = ((get_global_mouse_position() - center_of_screen)* -1).clamp(Vector2(-menu_max_travel, -menu_max_travel), Vector2(menu_max_travel, menu_max_travel))
+	global_position = lerp(global_position, dist_to_mouse, delta * 2)
 
 func move_to_next_menu(next_menu_id: String):
 	var next_menu = get_menu_from_id(next_menu_id)
@@ -57,11 +66,6 @@ func _on_back_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
-
-func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
-
 
 func _on_x_1080_pressed():
 	menu1.scale = Vector2(1, 1)
