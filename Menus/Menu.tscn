@@ -54,6 +54,20 @@ layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
+[node name="Title" type="Label" parent="Menu1/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_vxcjk")
+theme_override_font_sizes/font_size = 50
+text = "Flamme Boom Boom"
+horizontal_alignment = 1
+
+[node name="Empty3" type="Label" parent="Menu1/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vxcjk")
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+
 [node name="StartButton" type="Button" parent="Menu1/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
@@ -103,50 +117,85 @@ flat = true
 layout_mode = 0
 offset_left = 1913.0
 offset_top = 9.0
-offset_right = 3975.0
-offset_bottom = 1044.0
+offset_right = 3879.0
+offset_bottom = 1060.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Menu2"]
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="Menu2/VBoxContainer2"]
+[node name="Setting" type="Label" parent="Menu2/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vxcjk")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="Menu2/VBoxContainer2"]
+[node name="Empty3" type="Label" parent="Menu2/VBoxContainer2"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_vxcjk")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tnv4a")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_wjod0")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_qopvi")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_v0df7")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_p7e8n")
-text = "Start"
-flat = true
+theme_override_font_sizes/font_size = 200
+horizontal_alignment = 1
 
-[node name="OptionsButton" type="Button" parent="Menu2/VBoxContainer2"]
+[node name="Setting2" type="Label" parent="Menu2/VBoxContainer2"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_vxcjk")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yyed8")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_g74v6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_btvym")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_tdmud")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wp12x")
-text = "Options"
-flat = true
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Empty" type="Label" parent="Menu2/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vxcjk")
+theme_override_font_sizes/font_size = 200
+horizontal_alignment = 1
+
+[node name="Resolution" type="Label" parent="Menu2/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vxcjk")
+theme_override_font_sizes/font_size = 50
+text = "Resolution :"
+horizontal_alignment = 1
+
+[node name="1920x1080" type="Button" parent="Menu2/VBoxContainer2/Resolution"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 4.627
+offset_left = -24.0
+offset_top = 79.0
+offset_right = 12.0
+offset_bottom = -23.977
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_right = NodePath("../2560x1440")
+theme_override_fonts/font = ExtResource("2_vxcjk")
+theme_override_font_sizes/font_size = 50
+text = "1920x1080"
+
+[node name="2560x1440" type="Button" parent="Menu2/VBoxContainer2/Resolution"]
+offset_left = 539.0
+offset_top = 75.0
+offset_right = 1119.0
+offset_bottom = 216.0
+theme_override_fonts/font = ExtResource("2_vxcjk")
+theme_override_font_sizes/font_size = 50
+text = "2560x1440"
+
+[node name="1280x720" type="Button" parent="Menu2/VBoxContainer2/Resolution"]
+offset_left = -650.0
+offset_top = 78.0
+offset_right = -70.0
+offset_bottom = 219.0
+theme_override_fonts/font = ExtResource("2_vxcjk")
+theme_override_font_sizes/font_size = 50
+text = "1280x720"
+
+[node name="Empty2" type="Label" parent="Menu2/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vxcjk")
+theme_override_font_sizes/font_size = 250
+horizontal_alignment = 1
 
 [node name="BackButton" type="Button" parent="Menu2/VBoxContainer2"]
 layout_mode = 2
@@ -166,6 +215,7 @@ flat = true
 [connection signal="pressed" from="Menu1/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu1/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menu1/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="Menu2/VBoxContainer2/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Menu2/VBoxContainer2/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menu2/VBoxContainer2/Resolution/1920x1080" to="." method="_on_x_1080_pressed"]
+[connection signal="pressed" from="Menu2/VBoxContainer2/Resolution/2560x1440" to="." method="_on_x_1440_pressed"]
+[connection signal="pressed" from="Menu2/VBoxContainer2/Resolution/1280x720" to="." method="_on_x_720_pressed"]
 [connection signal="pressed" from="Menu2/VBoxContainer2/BackButton" to="." method="_on_back_button_pressed"]
