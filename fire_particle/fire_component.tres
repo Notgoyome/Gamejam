@@ -1,0 +1,16 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://cwe4jebsw0003"]
+
+[resource]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+direction = Vector3(1, 2.08165e-12, 2.08165e-12)
+angular_velocity_min = 720.0
+angular_velocity_max = 720.0
+gravity = Vector3(2.08165e-12, -80, 2.08165e-12)
+scale_min = 0.2
+hue_variation_min = -0.01
+hue_variation_max = 1.0
+turbulence_noise_strength = 0.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
