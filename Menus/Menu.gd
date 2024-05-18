@@ -61,3 +61,21 @@ func _on_quit_button_pressed():
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+
+
+func _on_x_1080_pressed():
+	menu1.scale = Vector2(1, 1)
+	menu2.scale = Vector2(1, 1)
+	get_window().set_size(Vector2(1920, 1080))
+
+func _on_x_1440_pressed():
+	menu1.scale = Vector2(1.3333333333333333, 1.3333333333333333)
+	menu2.scale = Vector2(1.3333333333333333, 1.3333333333333333)
+	get_window().set_size(Vector2(2560, 1440))
+
+func _on_x_720_pressed():
+	menu1.scale = Vector2(0.6666666666666666, 0.6666666666666666)
+	menu2.scale = Vector2(0.6666666666666666, 0.6666666666666666)
+	get_window().set_size(Vector2(1280, 720))
+	get_window().get_viewport().set_size(Vector2(1280, 720))
+

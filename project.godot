@@ -14,3 +14,15 @@ config/name="Gamejam"
 run/main_scene="res://Menus/Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/resizable=false
+window/size/width=1920
+window/size/height=1080
+window/size/minwidth=800
+window/size/minheight=600
+window/size/maxwidth=0
+window/size/maxheight=0
