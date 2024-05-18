@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dexcbnp4ra2rk"]
 
-[ext_resource type="PackedScene" uid="uid://c2k318ixartie" path="res://prefab/player.tscn" id="1_ek6j0"]
+[ext_resource type="PackedScene" uid="uid://djyifofwexk3t" path="res://prefab/player.tscn" id="1_ek6j0"]
 [ext_resource type="Texture2D" uid="uid://bv4fr7ah70tbu" path="res://img/tiles.png" id="1_pfmnm"]
 [ext_resource type="Script" path="res://script/pipe.gd" id="2_lf6dk"]
 
@@ -419,5 +419,8 @@ layer_0/tile_data = PackedInt32Array(2293762, 655360, 0, 2293763, 720896, 0, 229
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_ek6j0")]
 position = Vector2(107, 556)
+
+[node name="LifeTimer" type="Timer" parent="CharacterBody2D"]
+process_callback = 0
 
 [connection signal="timeout" from="tilemap/pipe/Timer" to="tilemap/pipe" method="_on_timer_timeout"]

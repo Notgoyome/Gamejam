@@ -6,12 +6,17 @@ const JUMP_VELOCITY = -400.0
 
 #get child animatedsprite2D
 @onready var animatedsprite2D = $AnimatedSprite2D
+@onready var lifetimer = $LifeTimer
+
+var health = 100
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _ready():
+	lifetimer.start()
+	lifetimer.connect("timeout", _on_lifetimer_timeout)
 	animatedsprite2D.play("idle")
 	#sprite animatedsprite2D
 
@@ -37,3 +42,9 @@ func _physics_process(delta):
 	elif direction > 0:
 		animatedsprite2D.flip_h = false
 	move_and_slide()
+
+func _on_lifetimer_timeout():
+	print("Life timer timeout")
+	health -= 10
+	if health <= 0:
+		get_tree().change_scene_to_file("res://Menus/Menu.tscn")
