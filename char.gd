@@ -8,6 +8,8 @@ const JUMP_VELOCITY = -400.0
 @onready var animatedsprite2D = $AnimatedSprite2D
 @onready var lifetimer = $LifeTimer
 
+var alive = true
+
 var health = 100
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -22,6 +24,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	if dead():
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -47,4 +51,11 @@ func _on_lifetimer_timeout():
 	print("Life timer timeout")
 	health -= 10
 	if health <= 0:
-		get_tree().change_scene_to_file("res://Menus/Menu.tscn")
+		alive = false
+		# queue_free()
+
+func dead() -> bool:
+	if alive:
+		return false
+	else:
+		return true

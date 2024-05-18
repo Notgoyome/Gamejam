@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dexcbnp4ra2rk"]
+[gd_scene load_steps=14 format=3 uid="uid://dexcbnp4ra2rk"]
 
 [ext_resource type="PackedScene" uid="uid://djyifofwexk3t" path="res://prefab/player.tscn" id="1_ek6j0"]
+[ext_resource type="Script" path="res://base.gd" id="1_jccke"]
 [ext_resource type="Texture2D" uid="uid://bv4fr7ah70tbu" path="res://img/tiles.png" id="1_pfmnm"]
 [ext_resource type="Script" path="res://script/pipe.gd" id="2_lf6dk"]
+[ext_resource type="PackedScene" path="res://prefab/Button.tscn" id="4_31yx8"]
+[ext_resource type="PackedScene" path="res://prefab/Lever.tscn" id="5_0s30q"]
+[ext_resource type="Script" path="res://gameOverControl.gd" id="6_uvf2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3urls"]
 texture = ExtResource("1_pfmnm")
@@ -380,6 +384,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d2d4e")
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_jccke")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(187, 470)
@@ -423,4 +428,44 @@ position = Vector2(107, 556)
 [node name="LifeTimer" type="Timer" parent="CharacterBody2D"]
 process_callback = 0
 
+[node name="Button" parent="." instance=ExtResource("4_31yx8")]
+position = Vector2(265, 558)
+
+[node name="Lever" parent="." instance=ExtResource("5_0s30q")]
+position = Vector2(47, 560)
+
+[node name="gameOverControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = 326.0
+offset_right = 441.0
+offset_bottom = 608.0
+script = ExtResource("6_uvf2g")
+
+[node name="GameOver" type="MarginContainer" parent="gameOverControl"]
+layout_mode = 0
+offset_right = 511.0
+offset_bottom = 282.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="gameOverControl/GameOver"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="gameOverControl/GameOver/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GAME OVER"
+
+[node name="Restart" type="Button" parent="gameOverControl/GameOver/VBoxContainer"]
+layout_mode = 2
+text = "RESTART"
+
+[node name="MainMenu" type="Button" parent="gameOverControl/GameOver/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
 [connection signal="timeout" from="tilemap/pipe/Timer" to="tilemap/pipe" method="_on_timer_timeout"]
+[connection signal="pressed" from="gameOverControl/GameOver/VBoxContainer/Restart" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="gameOverControl/GameOver/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
