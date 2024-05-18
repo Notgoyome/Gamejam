@@ -38,16 +38,16 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = -6.0
 offset_top = 7.0
-offset_right = 3791.0
+offset_right = 4176.0
 offset_bottom = 2060.0
 script = ExtResource("1_qent0")
 
 [node name="Menu1" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 9.0
-offset_top = -14.0
-offset_right = 1168.0
-offset_bottom = 626.0
+layout_mode = 1
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 1917.0
+offset_bottom = 1059.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu1"]
 layout_mode = 2
@@ -101,10 +101,10 @@ flat = true
 
 [node name="Menu2" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 1144.0
-offset_top = -36.0
-offset_right = 2290.0
-offset_bottom = 626.0
+offset_left = 1913.0
+offset_top = 9.0
+offset_right = 3975.0
+offset_bottom = 1044.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Menu2"]
 layout_mode = 2
