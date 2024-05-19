@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dldree3yvcavu" path="res://prefab/torch.tscn" id="6_vejic"]
 [ext_resource type="PackedScene" uid="uid://sxghwvjl3l3a" path="res://prefab/Button.tscn" id="7_geq1o"]
 [ext_resource type="Script" path="res://prefab/pipe_script.gd" id="8_we4s1"]
-[ext_resource type="PackedScene" uid="uid://bw0kdesgh18d3" path="res://prefab/Trap.tscn" id="9_bokev"]
+[ext_resource type="PackedScene" uid="uid://dn8a4iapqbfwh" path="res://prefab/Door2.tscn" id="9_bokev"]
 [ext_resource type="PackedScene" uid="uid://bth3qqt68wubt" path="res://prefab/olympian_torch.tscn" id="10_c3x03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3urls"]
@@ -465,7 +465,7 @@ texture = ExtResource("2_hvkyk")
 [sub_resource type="TileSet" id="TileSet_sj7x7"]
 sources/0 = SubResource("TileSetAtlasSource_1aw2b")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_axtiw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
