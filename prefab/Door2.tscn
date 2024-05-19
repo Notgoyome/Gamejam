@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://qmplby7w2x2p" path="res://img/trap_open.png" id="5_e4b8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crev5"]
-size = Vector2(24, 24)
+size = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxv17"]
 size = Vector2(46, 51)
@@ -41,6 +41,7 @@ scale = Vector2(0.129371, 0.129371)
 texture = ExtResource("2_xd43s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-25, 270)
 shape = SubResource("RectangleShape2D_crev5")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_62013")]
