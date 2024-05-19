@@ -513,14 +513,6 @@ position = Vector2(58, 557)
 pipe = NodePath("../Pipe")
 activated = false
 
-[node name="Label" type="Label" parent="Button"]
-visible = false
-offset_left = -56.0
-offset_top = 144.0
-offset_right = -16.0
-offset_bottom = 167.0
-text = "0"
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_ogyby")]
 position = Vector2(107, 556)
 
@@ -583,12 +575,8 @@ layer_0/tile_data = PackedInt32Array(1048596, 458752, 1342177286, 1048595, 45875
 [node name="Button2" parent="." node_paths=PackedStringArray("pipe") instance=ExtResource("7_geq1o")]
 position = Vector2(229, 559)
 pipe = NodePath("../Pipe")
-
-[node name="Label" type="Label" parent="Button2"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-text = "1"
+index = 1
+activated = false
 
 [connection signal="timeout" from="tilemap/pipe/Timer" to="tilemap/pipe" method="_on_timer_timeout"]
 [connection signal="pressed" from="gameOverControl/GameOver/VBoxContainer/Restart" to="." method="_on_button_pressed"]

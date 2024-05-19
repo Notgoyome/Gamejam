@@ -4,6 +4,7 @@ extends StaticBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var timer = $Timer
 @export var pipe: Pipe
+@export var index: int
 
 var _activated: bool = false
 
@@ -21,9 +22,7 @@ func _ready():
 func _toggle_lamp():
 	activated = true
 	if pipe:
-		var lab: Label = find_child("Label")
-		print(lab.text)
-		pipe.on_pipe_change(int(lab.text))
+		pipe.on_pipe_change(index)
 	timer.start(1.0)
 
 func _turn_off_lamp():
