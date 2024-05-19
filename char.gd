@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 #get child animatedsprite2D
 @onready var animatedsprite2D = $AnimatedSprite2D
 @onready var lifetimer = $LifeTimer
+@onready var fire_component = $FireComponent
 
 var alive = true
 
@@ -48,8 +49,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_lifetimer_timeout():
-	print("Life timer timeout")
 	health -= 10
+	fire_component.set_particle_scale(float(health)/100.0, float(2 * health)/100.0)
+	fire_component.set_particle_lifetime(float(health)/100.0, float(health)/100.0)
+	if health <= 50:
+		animatedsprite2D.play("idle2")
 	if health <= 0:
 		alive = false
 		# queue_free()

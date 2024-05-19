@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6wrfxyf4guse"]
+[gd_scene load_steps=7 format=3 uid="uid://c6wrfxyf4guse"]
 
+[ext_resource type="Script" path="res://fire_particle/fire_component.gd" id="1_4o50q"]
 [ext_resource type="Texture2D" uid="uid://b7mvwlvnnrm2u" path="res://img/fire_particle.png" id="1_qdd0l"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ffymy"]
@@ -27,8 +28,9 @@ collision_bounce = 0.0
 
 [node name="FireComponent" type="Node2D"]
 position = Vector2(25, -9)
+script = ExtResource("1_4o50q")
 
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+[node name="orange" type="GPUParticles2D" parent="."]
 modulate = Color(1, 0.615686, 1, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_ffymy")
@@ -39,7 +41,7 @@ texture = ExtResource("1_qdd0l")
 speed_scale = 2.0
 explosiveness = 0.25
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="yellow" type="GPUParticles2D" parent="."]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_ffymy")
 position = Vector2(-1, -4)
