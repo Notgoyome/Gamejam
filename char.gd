@@ -1,15 +1,19 @@
 extends CharacterBody2D
 
+class_name Player
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var SPEED = 150.0
+@export var JUMP_VELOCITY = -300.0
+@export var SPEED_COEFFICIENT = 1.4
 
 #get child animatedsprite2D
 @onready var animatedsprite2D = $AnimatedSprite2D
 @onready var lifetimer = $LifeTimer
 @onready var fire_component = $FireComponent
+var constant_heal = false
 
 var alive = true
+var is_running = false
 
 var health = 100
 
@@ -22,7 +26,6 @@ func _ready():
 	lifetimer.connect("timeout", _on_lifetimer_timeout)
 	animatedsprite2D.play("idle")
 	#sprite animatedsprite2D
-
 
 func _physics_process(delta):
 	if dead():
@@ -38,8 +41,15 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
+	if Input.is_action_just_pressed("run"):
+		is_running = true
+	elif Input.is_action_just_released("run"):
+		is_running = false
 	if direction:
 		velocity.x = direction * SPEED
+		if is_running:
+			print("shift key pressed")
+			velocity.x *= SPEED_COEFFICIENT
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if direction < 0:
@@ -49,7 +59,10 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_lifetimer_timeout():
-	health -= 10
+	if constant_heal:
+		heal(20)
+	else:
+		health -= 10
 	fire_component.set_particle_scale(float(health)/100.0, float(2 * health)/100.0)
 	fire_component.set_particle_lifetime(float(health)/100.0, float(health)/100.0)
 	if health <= 50:
@@ -63,3 +76,15 @@ func dead() -> bool:
 		return false
 	else:
 		return true
+
+func heal(number: int):
+	health += number
+	if health > 100:
+		health = 100
+	fire_component.set_particle_scale(float(health)/100.0, float(2 * health)/100.0)
+	fire_component.set_particle_lifetime(float(health)/100.0, float(health)/100.0)
+	if health > 50:
+		animatedsprite2D.play("idle")
+
+func constantheal(boolean : bool):
+	constant_heal = boolean
