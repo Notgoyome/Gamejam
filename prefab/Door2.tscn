@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=16 format=3 uid="uid://dn8a4iapqbfwh"]
-=======
 [gd_scene load_steps=9 format=3 uid="uid://bwmdby7ilkpmq"]
->>>>>>> 69723fc3aafe8021d992ff06bfe72156fbc3bbbf
 
 [ext_resource type="Script" path="res://script/Door.gd" id="1_hcf0g"]
 [ext_resource type="Texture2D" uid="uid://cynm42j4rkoi3" path="res://img/porte.png" id="2_xd43s"]
