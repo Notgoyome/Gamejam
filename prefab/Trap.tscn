@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://qmplby7w2x2p" path="res://img/trap_open.png" id="5_jj8he"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crev5"]
-size = Vector2(18, 1)
+size = Vector2(18, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxv17"]
-size = Vector2(46, 51)
+size = Vector2(46, 43)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqyv7"]
 animations = [{
@@ -41,13 +41,14 @@ scale = Vector2(0.129371, 0.129371)
 texture = ExtResource("2_wwjfj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, 34)
 shape = SubResource("RectangleShape2D_crev5")
+disabled = true
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_l28ww")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, -2.5)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_wxv17")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
