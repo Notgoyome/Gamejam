@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw0kdesgh18d3"]
+[gd_scene load_steps=16 format=3 uid="uid://bw0kdesgh18d3"]
 
 [ext_resource type="Script" path="res://script/Door.gd" id="1_fspu6"]
 [ext_resource type="Texture2D" uid="uid://cynm42j4rkoi3" path="res://img/porte.png" id="2_wwjfj"]
 [ext_resource type="PackedScene" uid="uid://b6mmkikyafl6h" path="res://interaction/interaction area/interaction_area.tscn" id="3_l28ww"]
 [ext_resource type="Texture2D" uid="uid://co84gdc0swwgw" path="res://img/trap_closed.png" id="4_xsem1"]
 [ext_resource type="Texture2D" uid="uid://qmplby7w2x2p" path="res://img/trap_open.png" id="5_jj8he"]
+[ext_resource type="Texture2D" uid="uid://dmxg21sk0u6wf" path="res://img/particle.png" id="6_1s28u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crev5"]
 size = Vector2(18, 9)
@@ -31,6 +32,32 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_ikxq7"]
+_data = [Vector2(0.146341, 1), 0.0, 0.0, 0, 0, Vector2(0.935976, 0.476623), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_r42od"]
+curve = SubResource("Curve_ikxq7")
+
+[sub_resource type="Curve" id="Curve_6nxll"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.756883), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mrvwr"]
+curve = SubResource("Curve_6nxll")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8xk21"]
+particle_flag_disable_z = true
+gravity = Vector3(-100, 2.08165e-12, 2.08165e-12)
+scale_curve = SubResource("CurveTexture_mrvwr")
+alpha_curve = SubResource("CurveTexture_r42od")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fu21s"]
+particle_flag_disable_z = true
+gravity = Vector3(100, 2.08165e-12, 2.08165e-12)
+scale_curve = SubResource("CurveTexture_mrvwr")
+alpha_curve = SubResource("CurveTexture_r42od")
+
 [node name="Door" type="StaticBody2D"]
 script = ExtResource("1_fspu6")
 
@@ -55,3 +82,17 @@ shape = SubResource("RectangleShape2D_wxv17")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_hqyv7")
 animation = &"closed"
+
+[node name="left" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.0392157)
+texture_filter = 1
+process_material = SubResource("ParticleProcessMaterial_8xk21")
+texture = ExtResource("6_1s28u")
+lifetime = 1.3
+
+[node name="right" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.0392157)
+texture_filter = 1
+process_material = SubResource("ParticleProcessMaterial_fu21s")
+texture = ExtResource("6_1s28u")
+lifetime = 1.3
