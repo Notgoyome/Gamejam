@@ -5,8 +5,13 @@ extends StaticBody2D
 @export var scene_path_file: String = "default"
 @onready var parent: Pipe = get_parent()
 @onready var animation = $AnimatedSprite
+@onready var left: GPUParticles2D = $left
+@onready var right: GPUParticles2D = $right
 
 func _ready():
+	if left != null and right != null:
+		left.emitting = false
+		right.emitting = false
 	animation.play("closed")
 	interaction_area.interact = Callable(self, "_switch_scene")
 
@@ -15,6 +20,9 @@ func _process(delta):
 	print(parent.WORKING)
 	if parent.WORKING:
 		animation.play("open")
+		if left != null and right != null:
+			left.emitting = true
+			right.emitting = true
 	else:
 		animation.play("closed")
 
