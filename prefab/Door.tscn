@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo3b1lkm16s7e"]
+[gd_scene load_steps=6 format=3 uid="uid://bw0kdesgh18d3"]
 
 [ext_resource type="Script" path="res://script/Door.gd" id="1_fspu6"]
-[ext_resource type="Texture2D" uid="uid://bw765phx6sj0g" path="res://img/porte.png" id="2_wwjfj"]
+[ext_resource type="Texture2D" uid="uid://cynm42j4rkoi3" path="res://img/porte.png" id="2_wwjfj"]
 [ext_resource type="PackedScene" uid="uid://b6mmkikyafl6h" path="res://interaction/interaction area/interaction_area.tscn" id="3_l28ww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crev5"]
 size = Vector2(18, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxv17"]
-size = Vector2(18, 38)
+size = Vector2(46, 92)
 
 [node name="Door" type="StaticBody2D"]
 script = ExtResource("1_fspu6")

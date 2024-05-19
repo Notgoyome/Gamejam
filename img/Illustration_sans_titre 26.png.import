@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cynm42j4rkoi3"
-path="res://.godot/imported/porte.png-c0f38c90d740026badb7c90ac6cc6d6c.ctex"
+uid="uid://qlfyi1exy0gf"
+path="res://.godot/imported/Illustration_sans_titre 26.png-590744df4e6c71c9f4f65e2d72c64eda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/porte.png"
-dest_files=["res://.godot/imported/porte.png-c0f38c90d740026badb7c90ac6cc6d6c.ctex"]
+source_file="res://img/Illustration_sans_titre 26.png"
+dest_files=["res://.godot/imported/Illustration_sans_titre 26.png-590744df4e6c71c9f4f65e2d72c64eda.ctex"]
 
 [params]
 
