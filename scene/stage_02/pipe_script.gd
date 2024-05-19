@@ -1,7 +1,5 @@
 extends Area2D
 
-class_name Pipe
-
 var WORKING = false
 
 enum nstate {
@@ -47,9 +45,12 @@ func isWorking() -> bool:
 func _ready():
 	isWorking()
 
-func on_pipe_change(index):
+func on_pipe_change(pipe: Array, index):
+	if (index >= pipe.size() or index < 0):
+		print("pipe null")
+		return
 	print("pipe change")
-	actual_state[index] = getNextState(actual_state[index])
+	pipe[index] = getNextState(pipe[index])
 	isWorking()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

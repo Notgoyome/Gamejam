@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://script/pipe.gd" id="3_8aqcv"]
 [ext_resource type="PackedScene" uid="uid://c2k318ixartie" path="res://prefab/player.tscn" id="4_ogyby"]
 [ext_resource type="Script" path="res://gameOverControl.gd" id="5_mwhh3"]
-[ext_resource type="PackedScene" uid="uid://dldree3yvcavu" path="res://prefab/torch.tscn" id="6_vejic"]
+[ext_resource type="PackedScene" path="res://prefab/torch.tscn" id="6_vejic"]
 [ext_resource type="PackedScene" uid="uid://sxghwvjl3l3a" path="res://prefab/Button.tscn" id="7_geq1o"]
 [ext_resource type="PackedScene" uid="uid://cigd66l7ssi6x" path="res://prefab/pipe.tscn" id="7_ni8d1"]
 
@@ -426,10 +426,9 @@ layer_0/tile_data = PackedInt32Array(2293762, 655360, 0, 2293763, 720896, 0, 229
 [node name="torch" parent="." instance=ExtResource("6_vejic")]
 position = Vector2(73, 431)
 
-[node name="Button" parent="." instance=ExtResource("7_geq1o")]
+[node name="Button" parent="." node_paths=PackedStringArray("pipe") instance=ExtResource("7_geq1o")]
 position = Vector2(58, 557)
-pipe = Object(Area2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(-377, 210),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_pickable":true,"monitoring":true,"monitorable":true,"priority":0,"gravity_space_override":0,"gravity_point":false,"gravity_point_unit_distance":0.0,"gravity_point_center":Vector2(0, 1),"gravity_direction":Vector2(0, 1),"gravity":980.0,"linear_damp_space_override":0,"linear_damp":0.1,"angular_damp_space_override":0,"angular_damp":1.0,"audio_bus_override":false,"audio_bus_name":&"Master","script":Resource("res://prefab/pipe_script.gd"))
-
+pipe = NodePath("")
 
 [node name="Label" type="Label" parent="Button"]
 visible = false
@@ -440,7 +439,8 @@ offset_bottom = 167.0
 text = "0"
 
 [node name="pipe" parent="." instance=ExtResource("7_ni8d1")]
-position = Vector2(-377, 210)
+position = Vector2(-258, 262)
+script = null
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_ogyby")]
 position = Vector2(107, 556)

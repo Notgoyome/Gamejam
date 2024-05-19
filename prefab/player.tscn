@@ -114,7 +114,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4qibk")
 }],
 "loop": true,
-"name": &"pipe",
+"name": &"idle3",
 "speed": 5.0
 }]
 
