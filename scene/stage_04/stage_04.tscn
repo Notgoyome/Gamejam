@@ -562,7 +562,7 @@ layout_mode = 2
 text = "Main Menu"
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_lnb45")]
-position = Vector2(54, 360)
+position = Vector2(-131, 457)
 
 [node name="water" type="Area2D" parent="."]
 
