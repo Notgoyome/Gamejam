@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=16 format=3 uid="uid://dn8a4iapqbfwh"]
+=======
+[gd_scene load_steps=9 format=3 uid="uid://bwmdby7ilkpmq"]
+>>>>>>> 69723fc3aafe8021d992ff06bfe72156fbc3bbbf
 
 [ext_resource type="Script" path="res://script/Door.gd" id="1_hcf0g"]
 [ext_resource type="Texture2D" uid="uid://cynm42j4rkoi3" path="res://img/porte.png" id="2_xd43s"]
@@ -8,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dmxg21sk0u6wf" path="res://img/particle.png" id="6_a70wh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crev5"]
-size = Vector2(18, 1)
+size = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxv17"]
 size = Vector2(46, 51)
@@ -68,7 +72,8 @@ scale = Vector2(0.129371, 0.129371)
 texture = ExtResource("2_xd43s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+visible = false
+position = Vector2(-25, 270)
 shape = SubResource("RectangleShape2D_crev5")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_62013")]
