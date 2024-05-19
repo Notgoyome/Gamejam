@@ -37,7 +37,6 @@ func _physics_process(delta):
 	if player_state == state.MOVE:
 		print("state move")
 		animatedsprite2D.visible = true
-		animatedsprite2D.play("idle")
 		hotParticle.emitting = false
 	elif player_state == state.PIPE_MOVE:
 		#enable hot particle
