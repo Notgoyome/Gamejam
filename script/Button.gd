@@ -22,7 +22,7 @@ func _ready():
 func _toggle_lamp():
 	activated = true
 	if pipe:
-		pipe.WORKING = true
+		pipe.on_pipe_change(pipe.actual_state, 0)
 	timer.start(1.0)
 
 func _turn_off_lamp():
