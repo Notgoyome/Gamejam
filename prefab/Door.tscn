@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo3b1lkm16s7e"]
+
+[ext_resource type="Script" path="res://script/Door.gd" id="1_fspu6"]
+[ext_resource type="Texture2D" uid="uid://bw765phx6sj0g" path="res://img/porte.png" id="2_wwjfj"]
+[ext_resource type="PackedScene" uid="uid://b6mmkikyafl6h" path="res://interaction/interaction area/interaction_area.tscn" id="3_l28ww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crev5"]
+size = Vector2(18, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxv17"]
+size = Vector2(18, 38)
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_fspu6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -19)
+scale = Vector2(0.129371, 0.129371)
+texture = ExtResource("2_wwjfj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_crev5")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_l28ww")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_wxv17")
