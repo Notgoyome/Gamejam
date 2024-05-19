@@ -13,6 +13,7 @@ enum state {
 
 @export var actual_state: Array
 @export var expected_state: Array
+@export var tiles: Dictionary
 
 var WORKING = false
 
@@ -48,6 +49,19 @@ func on_pipe_change(index):
 	isWorking()
 	print(actual_state)
 	print(expected_state)
+	var tile: TileMap = find_child(tiles[index])
+	if actual_state[index] == state.VERT:
+		tile.rotation_degrees = 0
+	elif actual_state[index] == state.HORIZ:
+		tile.rotation_degrees = 90
+	elif actual_state[index] == state.HG:
+		tile.rotation_degrees = 180
+	elif actual_state[index] == state.GB:
+		tile.rotation_degrees = 270
+	elif actual_state[index] == state.BD:
+		tile.rotation_degrees = 0
+	elif actual_state[index] == state.DH:
+		tile.rotation_degrees = 90
 
 var b = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://script/pipe.gd" id="3_8aqcv"]
 [ext_resource type="PackedScene" uid="uid://c2k318ixartie" path="res://prefab/player.tscn" id="4_ogyby"]
 [ext_resource type="Script" path="res://gameOverControl.gd" id="5_mwhh3"]
-[ext_resource type="PackedScene" path="res://prefab/torch.tscn" id="6_vejic"]
+[ext_resource type="PackedScene" uid="uid://dldree3yvcavu" path="res://prefab/torch.tscn" id="6_vejic"]
 [ext_resource type="PackedScene" uid="uid://sxghwvjl3l3a" path="res://prefab/Button.tscn" id="7_geq1o"]
 [ext_resource type="Script" path="res://prefab/pipe_script.gd" id="8_we4s1"]
 
@@ -513,10 +513,48 @@ position = Vector2(58, 557)
 pipe = NodePath("../Pipe")
 activated = false
 
+[node name="Pipe" type="Area2D" parent="."]
+position = Vector2(-323, 205)
+script = ExtResource("8_we4s1")
+actual_state = [0, 2]
+expected_state = [1, 5]
+tiles = {
+0: "straight",
+1: "corner"
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe"]
+position = Vector2(554.25, 268)
+shape = SubResource("RectangleShape2D_m0hnk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pipe"]
+position = Vector2(267, 268)
+shape = SubResource("CircleShape2D_jlds6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pipe"]
+position = Vector2(845, 268)
+shape = SubResource("CircleShape2D_jlds6")
+
+[node name="texture" type="TileMap" parent="Pipe"]
+tile_set = SubResource("TileSet_sj7x7")
+format = 2
+layer_0/tile_data = PackedInt32Array(1048596, 458752, 1342177286, 1048595, 458752, 1342177287, 1048594, 458752, 1342177288, 1048599, 458752, 1342177286, 1048598, 458752, 1342177287, 1048597, 458752, 1342177288, 1048602, 458752, 1342177286, 1048601, 458752, 1342177287, 1048600, 458752, 1342177288, 1048605, 458752, 1342177286, 1048604, 458752, 1342177287, 1048603, 458752, 1342177288, 1048608, 458752, 1342177286, 1048607, 458752, 1342177287, 1048606, 458752, 1342177288, 1048614, 458752, 1342177286, 1048613, 458752, 1342177287, 1048612, 458752, 1342177288, 1048617, 458752, 1342177286, 1048616, 458752, 1342177287, 1048615, 458752, 1342177288, 1048620, 458752, 1342177286, 1048619, 458752, 1342177287, 1048618, 458752, 1342177288, 1048623, 458752, 1342177286, 1048622, 458752, 1342177287, 1048621, 458752, 1342177288, 1048626, 458752, 1342177286, 1048625, 458752, 1342177287, 1048624, 458752, 1342177288, 983074, 458752, 805306376, 1048610, 458752, 805306375, 1114146, 458752, 805306374)
+
+[node name="corner" type="TileMap" parent="Pipe"]
+tile_set = SubResource("TileSet_sj7x7")
+format = 2
+layer_0/tile_data = PackedInt32Array(786464, 393216, 5, 786465, 458752, 5, 852001, 458752, 6)
+
+[node name="straight" type="TileMap" parent="Pipe"]
+tile_set = SubResource("TileSet_sj7x7")
+format = 2
+layer_0/tile_data = PackedInt32Array(852005, 327680, 5, 852006, 393216, 5)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_ogyby")]
 position = Vector2(107, 556)
 
 [node name="gameOverControl" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -70.0
@@ -548,29 +586,6 @@ text = "RESTART"
 [node name="MainMenu" type="Button" parent="gameOverControl/GameOver/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu"
-
-[node name="Pipe" type="Area2D" parent="."]
-position = Vector2(-323, 205)
-script = ExtResource("8_we4s1")
-actual_state = [0, 2]
-expected_state = [1, 5]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe"]
-position = Vector2(554.25, 268)
-shape = SubResource("RectangleShape2D_m0hnk")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pipe"]
-position = Vector2(267, 268)
-shape = SubResource("CircleShape2D_jlds6")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pipe"]
-position = Vector2(845, 268)
-shape = SubResource("CircleShape2D_jlds6")
-
-[node name="texture" type="TileMap" parent="Pipe"]
-tile_set = SubResource("TileSet_sj7x7")
-format = 2
-layer_0/tile_data = PackedInt32Array(1048596, 458752, 1342177286, 1048595, 458752, 1342177287, 1048594, 458752, 1342177288, 1048599, 458752, 1342177286, 1048598, 458752, 1342177287, 1048597, 458752, 1342177288, 1048602, 458752, 1342177286, 1048601, 458752, 1342177287, 1048600, 458752, 1342177288, 1048605, 458752, 1342177286, 1048604, 458752, 1342177287, 1048603, 458752, 1342177288, 1048608, 458752, 1342177286, 1048607, 458752, 1342177287, 1048606, 458752, 1342177288, 1048614, 458752, 1342177286, 1048613, 458752, 1342177287, 1048612, 458752, 1342177288, 1048617, 458752, 1342177286, 1048616, 458752, 1342177287, 1048615, 458752, 1342177288, 1048620, 458752, 1342177286, 1048619, 458752, 1342177287, 1048618, 458752, 1342177288, 1048623, 458752, 1342177286, 1048622, 458752, 1342177287, 1048621, 458752, 1342177288, 1048626, 458752, 1342177286, 1048625, 458752, 1342177287, 1048624, 458752, 1342177288, 983074, 458752, 805306376, 1048610, 458752, 805306375, 1114146, 458752, 805306374)
 
 [node name="Button2" parent="." node_paths=PackedStringArray("pipe") instance=ExtResource("7_geq1o")]
 position = Vector2(229, 559)
