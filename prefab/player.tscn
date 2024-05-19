@@ -143,3 +143,7 @@ texture_repeat = 2
 position = Vector2(8, -3)
 scale = Vector2(0.498617, 0.5)
 texture = ExtResource("3_su7ig")
+
+[node name="LifeTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1

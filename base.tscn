@@ -425,7 +425,7 @@ layer_0/tile_data = PackedInt32Array(2293762, 655360, 0, 2293763, 720896, 0, 229
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_ek6j0")]
 position = Vector2(107, 556)
 
-[node name="LifeTimer" type="Timer" parent="CharacterBody2D"]
+[node name="LifeTimer2" type="Timer" parent="CharacterBody2D"]
 process_callback = 0
 
 [node name="Button" parent="." instance=ExtResource("4_31yx8")]
