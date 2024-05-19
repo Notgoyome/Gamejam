@@ -50,18 +50,22 @@ func on_pipe_change(index):
 	print(actual_state)
 	print(expected_state)
 	var tile: TileMap = find_child(tiles[index])
+	# radians = degrees * pi / 180
 	if actual_state[index] == state.VERT:
-		tile.rotation_degrees = 0
+		tile.rotate(90 * PI / 180)
 	elif actual_state[index] == state.HORIZ:
-		tile.rotation_degrees = 90
+		tile.rotate(90 * PI / 180)
 	elif actual_state[index] == state.HG:
-		tile.rotation_degrees = 180
+		tile.rotate(90 * PI / 180)
 	elif actual_state[index] == state.GB:
-		tile.rotation_degrees = 270
+		tile.rotate(180 * PI / 180)
 	elif actual_state[index] == state.BD:
-		tile.rotation_degrees = 0
+		tile.rotate(270 * PI / 180)
 	elif actual_state[index] == state.DH:
-		tile.rotation_degrees = 90
+		tile.rotate(180 * PI / 180)
+
+	print(actual_state[index])
+
 
 var b = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.

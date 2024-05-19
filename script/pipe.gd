@@ -42,5 +42,6 @@ func _on_timer_timeout():
 			if atlas_coords != Vector2i(-1, -1) and [atlas_coords.x, atlas_coords.y] in coords_list:
 				var new_atlas_coords = get_next_rotation(atlas_coords)
 				set_cell(0, coords, 0, new_atlas_coords)
+			
 
 	pass # Replace with function body.
