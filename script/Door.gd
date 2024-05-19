@@ -17,7 +17,6 @@ func _ready():
 
 func _process(delta):
 	parent = get_parent()
-	print(parent.WORKING)
 	if parent.WORKING:
 		animation.play("open")
 		if left != null and right != null:
