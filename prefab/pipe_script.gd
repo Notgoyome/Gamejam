@@ -48,6 +48,9 @@ func _ready():
 	isWorking()
 
 func on_pipe_change(pipe: Array, index):
+	if (index >= pipe.size() or index < 0):
+		print("pipe null")
+		return
 	print("pipe change")
 	pipe[index] = getNextState(pipe[index])
 	isWorking()

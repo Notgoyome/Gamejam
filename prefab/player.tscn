@@ -146,4 +146,4 @@ texture = ExtResource("3_su7ig")
 
 [node name="LifeTimer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 0.1
+wait_time = 0.2
