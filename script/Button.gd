@@ -22,7 +22,9 @@ func _ready():
 func _toggle_lamp():
 	activated = true
 	if pipe:
-		pipe.on_pipe_change(pipe.actual_state, 0)
+		var lab: Label = find_child("Label")
+		print(lab.text)
+		pipe.on_pipe_change(pipe.actual_state, int(lab.text))
 	timer.start(1.0)
 
 func _turn_off_lamp():
