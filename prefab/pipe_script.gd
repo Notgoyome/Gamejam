@@ -48,12 +48,10 @@ func _ready():
 	isWorking()
 
 func on_pipe_change(pipe: Array, index):
+	print("pipe change")
 	pipe[index] = getNextState(pipe[index])
 	isWorking()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (Input.is_key_pressed(KEY_SPACE)):
-		on_pipe_change(actual_state, 0)
-	elif WORKING:
-		print("gg t'as gagné")
+	pass
