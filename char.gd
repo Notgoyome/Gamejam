@@ -62,7 +62,7 @@ func _on_lifetimer_timeout():
 	if constant_heal:
 		heal(20)
 	else:
-		health -= 10
+		health -= 1
 	fire_component.set_particle_scale(float(health)/100.0, float(2 * health)/100.0)
 	fire_component.set_particle_lifetime(float(health)/100.0, float(health)/100.0)
 	if health <= 50:

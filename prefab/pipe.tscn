@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://wnr0kg20knc8"]
+[gd_scene load_steps=7 format=3 uid="uid://cigd66l7ssi6x"]
 
-[ext_resource type="Script" path="res://prefab/pipe_script.gd" id="1_3x4s8"]
-[ext_resource type="Texture2D" uid="uid://bv4fr7ah70tbu" path="res://img/tiles.png" id="2_mr7vd"]
+[ext_resource type="Script" path="res://prefab/pipe_script.gd" id="1_7hkfs"]
+[ext_resource type="Texture2D" uid="uid://bv4fr7ah70tbu" path="res://img/tiles.png" id="2_082bf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0hnk"]
 size = Vector2(577.5, 52)
@@ -10,7 +10,7 @@ size = Vector2(577.5, 52)
 radius = 26.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1aw2b"]
-texture = ExtResource("2_mr7vd")
+texture = ExtResource("2_082bf")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -85,24 +85,22 @@ texture = ExtResource("2_mr7vd")
 [sub_resource type="TileSet" id="TileSet_sj7x7"]
 sources/0 = SubResource("TileSetAtlasSource_1aw2b")
 
-[node name="Pipe" type="Node2D"]
+[node name="pipe" type="Area2D"]
+script = ExtResource("1_7hkfs")
 
-[node name="pipe" type="Area2D" parent="."]
-script = ExtResource("1_3x4s8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pipe"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(554.25, 268)
 shape = SubResource("RectangleShape2D_m0hnk")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="pipe"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(267, 268)
 shape = SubResource("CircleShape2D_jlds6")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="pipe"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(845, 268)
 shape = SubResource("CircleShape2D_jlds6")
 
-[node name="texture" type="TileMap" parent="pipe"]
+[node name="texture" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sj7x7")
 format = 2
 layer_0/tile_data = PackedInt32Array(1048596, 458752, 1342177286, 1048595, 458752, 1342177287, 1048594, 458752, 1342177288, 1048599, 458752, 1342177286, 1048598, 458752, 1342177287, 1048597, 458752, 1342177288, 1048602, 458752, 1342177286, 1048601, 458752, 1342177287, 1048600, 458752, 1342177288, 1048605, 458752, 1342177286, 1048604, 458752, 1342177287, 1048603, 458752, 1342177288, 1048608, 458752, 1342177286, 1048607, 458752, 1342177287, 1048606, 458752, 1342177288, 1048614, 458752, 1342177286, 1048613, 458752, 1342177287, 1048612, 458752, 1342177288, 1048617, 458752, 1342177286, 1048616, 458752, 1342177287, 1048615, 458752, 1342177288, 1048620, 458752, 1342177286, 1048619, 458752, 1342177287, 1048618, 458752, 1342177288, 1048623, 458752, 1342177286, 1048622, 458752, 1342177287, 1048621, 458752, 1342177288, 1048626, 458752, 1342177286, 1048625, 458752, 1342177287, 1048624, 458752, 1342177288, 983074, 458752, 805306376, 1048610, 458752, 805306375, 1114146, 458752, 805306374)

@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Pipe
+
 var WORKING = false
 
 enum nstate {
