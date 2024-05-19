@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dldree3yvcavu" path="res://prefab/torch.tscn" id="4_60nir"]
 [ext_resource type="PackedScene" uid="uid://sxghwvjl3l3a" path="res://prefab/Button.tscn" id="5_7t2xs"]
 [ext_resource type="Script" path="res://prefab/pipe_script.gd" id="6_2qxag"]
-[ext_resource type="PackedScene" path="res://prefab/Door2.tscn" id="7_ibt4g"]
+[ext_resource type="PackedScene" uid="uid://bwmdby7ilkpmq" path="res://prefab/Door2.tscn" id="7_ibt4g"]
 [ext_resource type="PackedScene" uid="uid://c2k318ixartie" path="res://prefab/player.tscn" id="8_yp524"]
 [ext_resource type="Script" path="res://gameOverControl.gd" id="9_2lxh4"]
 
@@ -464,7 +464,7 @@ texture = ExtResource("2_1616q")
 [sub_resource type="TileSet" id="TileSet_sj7x7"]
 sources/0 = SubResource("TileSetAtlasSource_1aw2b")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_umho0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -577,6 +577,15 @@ text = "RESTART"
 [node name="MainMenu" type="Button" parent="gameOverControl/GameOver/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="Help 2" type="Label" parent="."]
+offset_left = 288.0
+offset_top = 360.0
+offset_right = 420.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 10
+text = "To escape you have to connect all the pipes using the buttons !"
+autowrap_mode = 2
 
 [node name="Help 1" type="Label" parent="."]
 offset_left = 86.0
