@@ -428,6 +428,7 @@ position = Vector2(107, 556)
 
 [node name="Button" parent="." instance=ExtResource("5_wmk56")]
 position = Vector2(265, 558)
+activated = null
 
 [node name="Lever" parent="." instance=ExtResource("6_musst")]
 position = Vector2(47, 560)

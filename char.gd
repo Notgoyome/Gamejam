@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 class_name Player
 
+enum state {
+	MOVE,
+	PIPE_MOVE
+}
+
 @export var SPEED = 150.0
 @export var JUMP_VELOCITY = -300.0
 @export var SPEED_COEFFICIENT = 1.4
@@ -10,12 +15,13 @@ class_name Player
 @onready var animatedsprite2D = $AnimatedSprite2D
 @onready var lifetimer = $LifeTimer
 @onready var fire_component = $FireComponent
+@onready var hotParticle : GPUParticles2D = $hot
 var constant_heal = false
-
+var player_state = state.PIPE_MOVE
 var alive = true
 var is_running = false
 
-var health = 100
+@export var health = 100
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -28,6 +34,15 @@ func _ready():
 	#sprite animatedsprite2D
 
 func _physics_process(delta):
+	if player_state == state.MOVE:
+		print("state move")
+		animatedsprite2D.visible = true
+		animatedsprite2D.play("idle")
+		hotParticle.emitting = false
+	elif player_state == state.PIPE_MOVE:
+		#enable hot particle
+		hotParticle.emitting = true
+		animatedsprite2D.visible = false
 	if dead():
 		return
 	# Add the gravity.
@@ -62,7 +77,7 @@ func _on_lifetimer_timeout():
 	if constant_heal:
 		heal(20)
 	else:
-		health -= 1
+		health -= 0
 	fire_component.set_particle_scale(float(health)/100.0, float(2 * health)/100.0)
 	fire_component.set_particle_lifetime(float(health)/100.0, float(health)/100.0)
 	if health <= 50:
