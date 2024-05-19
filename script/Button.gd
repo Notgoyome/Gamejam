@@ -12,7 +12,6 @@ var _activated: bool = false
 		return _activated
 	set(value):
 		_activated = value
-		sprite.play("on" if value else "off")
 
 func _ready():
 	sprite.play("off")
@@ -24,7 +23,7 @@ func _toggle_lamp():
 	if pipe:
 		var lab: Label = find_child("Label")
 		print(lab.text)
-		pipe.on_pipe_change(pipe.actual_state, int(lab.text))
+		pipe.on_pipe_change(int(lab.text))
 	timer.start(1.0)
 
 func _turn_off_lamp():

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2k318ixartie" path="res://prefab/player.tscn" id="4_ntmc7"]
 [ext_resource type="PackedScene" path="res://prefab/torch.tscn" id="5_dhn42"]
 [ext_resource type="PackedScene" uid="uid://sxghwvjl3l3a" path="res://prefab/Button.tscn" id="6_ql3hj"]
-[ext_resource type="PackedScene" uid="uid://cigd66l7ssi6x" path="res://prefab/pipe.tscn" id="7_i3wv5"]
+[ext_resource type="PackedScene" uid="uid://cigd66l7ssi6x" path="res://prefab/Pipe.tscn" id="7_i3wv5"]
 [ext_resource type="Script" path="res://gameOverControl.gd" id="8_7rwd8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3urls"]
@@ -431,6 +431,7 @@ position = Vector2(73, 431)
 [node name="Button" parent="." node_paths=PackedStringArray("pipe") instance=ExtResource("6_ql3hj")]
 position = Vector2(58, 557)
 pipe = NodePath("../pipe")
+activated = false
 
 [node name="pipe" parent="." instance=ExtResource("7_i3wv5")]
 position = Vector2(-377, 210)

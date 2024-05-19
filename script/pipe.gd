@@ -31,7 +31,6 @@ func get_next_rotation(atlas_coord):
 
 func _on_timer_timeout():
 	# Itérer sur toutes les cellules du TileMap et appliquer la rotation
-	print("test")
 	
 	# Example coordinates for a 2x2 region
 	var start_coords = Vector2i(12, 29)
@@ -40,7 +39,6 @@ func _on_timer_timeout():
 	for x in range(start_coords.x, end_coords.x + 1):
 			var coords = Vector2i(x, start_coords.y)
 			var atlas_coords = get_cell_atlas_coords(0, coords)
-			print("atlas cord: ", atlas_coords)
 			if atlas_coords != Vector2i(-1, -1) and [atlas_coords.x, atlas_coords.y] in coords_list:
 				var new_atlas_coords = get_next_rotation(atlas_coords)
 				set_cell(0, coords, 0, new_atlas_coords)
