@@ -70,7 +70,7 @@ func on_pipe_change(index):
 var b = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if !b and WORKING:
+	if WORKING:
 		print("gg le sang")
 		b = true
 	

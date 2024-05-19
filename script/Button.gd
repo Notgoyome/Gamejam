@@ -32,6 +32,4 @@ func _toggle_lamp():
 
 func _turn_off_lamp():
 	activated = false
-	if pipe:
-		pipe.WORKING = false
 	timer.stop()

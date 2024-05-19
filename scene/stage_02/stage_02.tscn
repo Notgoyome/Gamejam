@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bv4fr7ah70tbu" path="res://img/tiles.png" id="2_vi48o"]
 [ext_resource type="Script" path="res://script/pipe.gd" id="3_uqswm"]
 [ext_resource type="PackedScene" uid="uid://c2k318ixartie" path="res://prefab/player.tscn" id="4_nhx8v"]
-[ext_resource type="PackedScene" path="res://prefab/torch.tscn" id="5_l6wc7"]
+[ext_resource type="PackedScene" uid="uid://dldree3yvcavu" path="res://prefab/torch.tscn" id="5_l6wc7"]
 [ext_resource type="Script" path="res://gameOverControl.gd" id="8_0ca7j"]
 [ext_resource type="PackedScene" uid="uid://sxghwvjl3l3a" path="res://prefab/Button.tscn" id="9_rrsc1"]
 

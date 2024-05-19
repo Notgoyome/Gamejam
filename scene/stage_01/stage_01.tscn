@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dldree3yvcavu" path="res://prefab/torch.tscn" id="6_vejic"]
 [ext_resource type="PackedScene" uid="uid://sxghwvjl3l3a" path="res://prefab/Button.tscn" id="7_geq1o"]
 [ext_resource type="Script" path="res://prefab/pipe_script.gd" id="8_we4s1"]
+[ext_resource type="PackedScene" uid="uid://bw0kdesgh18d3" path="res://prefab/Trap.tscn" id="9_bokev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3urls"]
 texture = ExtResource("2_hvkyk")
@@ -384,9 +385,6 @@ texture = ExtResource("2_hvkyk")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d2d4e")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0hnk"]
-size = Vector2(577.5, 52)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlds6"]
 radius = 26.0
 
@@ -510,32 +508,30 @@ position = Vector2(73, 431)
 
 [node name="Button" parent="." node_paths=PackedStringArray("pipe") instance=ExtResource("7_geq1o")]
 position = Vector2(58, 557)
+rotation = -0.00336182
 pipe = NodePath("../Pipe")
 activated = false
 
 [node name="Pipe" type="Area2D" parent="."]
 position = Vector2(-323, 205)
+rotation = 0.00078576
 script = ExtResource("8_we4s1")
-actual_state = [0, 3]
-expected_state = [1, 5]
+actual_state = [3]
+expected_state = [2]
 tiles = {
-0: "straight",
-1: "corner"
+0: &"corner"
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe"]
-position = Vector2(554.25, 268)
-shape = SubResource("RectangleShape2D_m0hnk")
+[node name="Door" parent="Pipe" instance=ExtResource("9_bokev")]
+position = Vector2(589, 343)
+scene_path_file = "res://scene/stage_01/stage_01.tscn"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pipe"]
 position = Vector2(267, 268)
 shape = SubResource("CircleShape2D_jlds6")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pipe"]
-position = Vector2(845, 268)
-shape = SubResource("CircleShape2D_jlds6")
-
 [node name="texture" type="TileMap" parent="Pipe"]
+rotation = -0.000326694
 tile_set = SubResource("TileSet_sj7x7")
 format = 2
 layer_0/tile_data = PackedInt32Array(1048596, 458752, 1342177286, 1048595, 458752, 1342177287, 1048594, 458752, 1342177288, 1048599, 458752, 1342177286, 1048598, 458752, 1342177287, 1048597, 458752, 1342177288, 1048602, 458752, 1342177286, 1048601, 458752, 1342177287, 1048600, 458752, 1342177288, 1048605, 458752, 1342177286, 1048604, 458752, 1342177287, 1048603, 458752, 1342177288, 1048608, 458752, 1342177286, 1048607, 458752, 1342177287, 1048606, 458752, 1342177288, 1048614, 458752, 1342177286, 1048613, 458752, 1342177287, 1048612, 458752, 1342177288, 1048617, 458752, 1342177286, 1048616, 458752, 1342177287, 1048615, 458752, 1342177288, 1048620, 458752, 1342177286, 1048619, 458752, 1342177287, 1048618, 458752, 1342177288, 1048623, 458752, 1342177286, 1048622, 458752, 1342177287, 1048621, 458752, 1342177288, 1048626, 458752, 1342177286, 1048625, 458752, 1342177287, 1048624, 458752, 1342177288, 983074, 458752, 805306376, 1048610, 458752, 805306375, 1114146, 458752, 805306374)
@@ -545,12 +541,6 @@ position = Vector2(500, 230)
 tile_set = SubResource("TileSet_sj7x7")
 format = 2
 layer_0/tile_data = PackedInt32Array(-1, 393216, 5, -65536, 458752, 5, 0, 458752, 6)
-
-[node name="straight" type="TileMap" parent="Pipe"]
-position = Vector2(600, 230)
-tile_set = SubResource("TileSet_sj7x7")
-format = 2
-layer_0/tile_data = PackedInt32Array(-1, 327680, 9, -65536, 393216, 9)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_ogyby")]
 position = Vector2(107, 556)
