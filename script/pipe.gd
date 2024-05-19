@@ -30,10 +30,10 @@ func get_next_rotation(atlas_coord):
 	return Vector2i(-1, -1)
 
 func _on_timer_timeout():
-    # Itérer sur toutes les cellules du TileMap et appliquer la rotation
+	# Itérer sur toutes les cellules du TileMap et appliquer la rotation
 	print("test")
-    
-    # Example coordinates for a 2x2 region
+	
+	# Example coordinates for a 2x2 region
 	var start_coords = Vector2i(12, 29)
 	var end_coords = Vector2i(12, 29) # Inclusive range
 

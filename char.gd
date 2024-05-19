@@ -17,7 +17,7 @@ enum state {
 @onready var fire_component = $FireComponent
 @onready var hotParticle : GPUParticles2D = $hot
 var constant_heal = false
-var player_state = state.PIPE_MOVE
+var player_state = state.MOVE
 var alive = true
 var is_running = false
 
@@ -77,7 +77,7 @@ func _on_lifetimer_timeout():
 	if constant_heal:
 		heal(20)
 	else:
-		health -= 0
+		health -= 1
 	fire_component.set_particle_scale(float(health)/100.0, float(2 * health)/100.0)
 	fire_component.set_particle_lifetime(float(health)/100.0, float(health)/100.0)
 	if health <= 50:

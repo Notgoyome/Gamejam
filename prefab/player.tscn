@@ -114,7 +114,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4qibk")
 }],
 "loop": true,
-"name": &"idle3",
+"name": &"pipe",
 "speed": 5.0
 }]
 
@@ -146,7 +146,6 @@ position = Vector2(24, -16)
 shape = SubResource("RectangleShape2D_adq2i")
 
 [node name="FireComponent" parent="." instance=ExtResource("2_g4w4g")]
-visible = false
 position = Vector2(27, -7)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
