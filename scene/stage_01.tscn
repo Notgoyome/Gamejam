@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cehyd1xsqkytq"]
+[gd_scene load_steps=15 format=3 uid="uid://da4hwxhk67j3"]
 
 [ext_resource type="Script" path="res://base.gd" id="1_axtiw"]
 [ext_resource type="Texture2D" uid="uid://bv4fr7ah70tbu" path="res://img/tiles.png" id="2_hvkyk"]
@@ -434,6 +434,7 @@ position = Vector2(73, 431)
 [node name="Button" parent="." node_paths=PackedStringArray("pipe") instance=ExtResource("7_geq1o")]
 position = Vector2(58, 557)
 pipe = NodePath("../pipe")
+activated = null
 
 [node name="gameOverControl" type="Control" parent="."]
 layout_mode = 3

@@ -47,12 +47,9 @@ func isWorking() -> bool:
 func _ready():
 	isWorking()
 
-func on_pipe_change(pipe: Array, index):
-	if (index >= pipe.size() or index < 0):
-		print("pipe null")
-		return
+func on_pipe_change(index):
 	print("pipe change")
-	pipe[index] = getNextState(pipe[index])
+	actual_state[index] = getNextState(actual_state[index])
 	isWorking()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
