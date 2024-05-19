@@ -56,13 +56,13 @@ func on_pipe_change(index):
 	elif actual_state[index] == state.HORIZ:
 		tile.rotate(90 * PI / 180)
 	elif actual_state[index] == state.HG:
-		tile.rotate(90 * PI / 180)
+		tile.rotate(-90 * PI / 180)
 	elif actual_state[index] == state.GB:
-		tile.rotate(180 * PI / 180)
+		tile.rotate(-90 * PI / 180)
 	elif actual_state[index] == state.BD:
-		tile.rotate(270 * PI / 180)
+		tile.rotate(-90 * PI / 180)
 	elif actual_state[index] == state.DH:
-		tile.rotate(180 * PI / 180)
+		tile.rotate(-90 * PI / 180)
 
 	print(actual_state[index])
 
