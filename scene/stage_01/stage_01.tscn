@@ -525,7 +525,6 @@ text = "0"
 position = Vector2(107, 556)
 
 [node name="gameOverControl" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -70.0
@@ -535,7 +534,6 @@ offset_bottom = 608.0
 script = ExtResource("5_mwhh3")
 
 [node name="GameOver" type="MarginContainer" parent="gameOverControl"]
-visible = false
 layout_mode = 0
 offset_left = -1.0
 offset_right = 510.0
