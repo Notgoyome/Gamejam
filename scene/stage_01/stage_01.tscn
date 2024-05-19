@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dldree3yvcavu" path="res://prefab/torch.tscn" id="6_vejic"]
 [ext_resource type="PackedScene" uid="uid://sxghwvjl3l3a" path="res://prefab/Button.tscn" id="7_geq1o"]
 [ext_resource type="Script" path="res://prefab/pipe_script.gd" id="8_we4s1"]
-[ext_resource type="PackedScene" uid="uid://bw0kdesgh18d3" path="res://prefab/Trap.tscn" id="9_bokev"]
+[ext_resource type="PackedScene" path="res://prefab/Door2.tscn" id="9_bokev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3urls"]
 texture = ExtResource("2_hvkyk")
