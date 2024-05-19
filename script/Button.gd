@@ -13,7 +13,11 @@ var _activated: bool = false
 		return _activated
 	set(value):
 		_activated = value
-		sprite.play("on" if value else "off")
+		if sprite:
+			if value:
+				sprite.play("on")
+			else:
+				sprite.play("off")
 
 func _ready():
 	sprite.play("off")
