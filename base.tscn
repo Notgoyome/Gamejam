@@ -430,6 +430,7 @@ process_callback = 0
 
 [node name="Button" parent="." instance=ExtResource("4_31yx8")]
 position = Vector2(265, 558)
+activated = false
 
 [node name="Lever" parent="." instance=ExtResource("5_0s30q")]
 position = Vector2(47, 560)

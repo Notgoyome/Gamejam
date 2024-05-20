@@ -14,7 +14,7 @@ scale_min = 0.05
 scale_max = 0.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adq2i"]
-size = Vector2(15, 24)
+size = Vector2(18, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rn885"]
 atlas = ExtResource("2_4caea")
@@ -139,7 +139,6 @@ trail_lifetime = 0.01
 position = Vector2(24, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_adq2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

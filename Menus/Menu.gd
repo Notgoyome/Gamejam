@@ -55,7 +55,7 @@ func get_menu_from_id(menu_id: String) -> Control:
 			return menu1
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://base.tscn")
+	get_tree().change_scene_to_file("res://scene/tuto/tuto.tscn")
 
 func _on_options_button_pressed():
 	# get_tree().change_scene("res://Menus/Options.tscn")

@@ -23,6 +23,8 @@ func _process(delta):
 			left.emitting = true
 			right.emitting = true
 	else:
+		left.emitting = false
+		right.emitting = false
 		animation.play("closed")
 
 func _switch_scene():
