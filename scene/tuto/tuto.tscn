@@ -464,7 +464,7 @@ texture = ExtResource("2_1616q")
 [sub_resource type="TileSet" id="TileSet_sj7x7"]
 sources/0 = SubResource("TileSetAtlasSource_1aw2b")
 
-[node name="Node2D2" type="Node2D"]
+[node name="tuto" type="Node2D"]
 script = ExtResource("1_umho0")
 
 [node name="Camera2D" type="Camera2D" parent="."]

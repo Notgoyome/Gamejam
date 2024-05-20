@@ -16,7 +16,8 @@ func _process(_delta):
 	pass
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://base.tscn")
+	#reload the scene
+	get_tree().reload_current_scene()
 	pass
 
 

@@ -537,7 +537,7 @@ texture = ExtResource("2_pa4na")
 [sub_resource type="TileSet" id="TileSet_6jbyd"]
 sources/0 = SubResource("TileSetAtlasSource_56kms")
 
-[node name="Node2D4" type="Node2D"]
+[node name="stage_03" type="Node2D"]
 script = ExtResource("1_xho57")
 
 [node name="Camera2D" type="Camera2D" parent="."]
