@@ -528,39 +528,6 @@ layer_0/tile_data = PackedInt32Array(2293762, 655360, 0, 2293763, 720896, 0, 229
 [node name="torch" parent="." instance=ExtResource("5_dvq8j")]
 position = Vector2(73, 431)
 
-[node name="gameOverControl" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -70.0
-offset_top = 326.0
-offset_right = 441.0
-offset_bottom = 608.0
-script = ExtResource("8_i4jjt")
-
-[node name="GameOver" type="MarginContainer" parent="gameOverControl"]
-layout_mode = 0
-offset_left = -1.0
-offset_right = 510.0
-offset_bottom = 282.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="gameOverControl/GameOver"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="gameOverControl/GameOver/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "GAME OVER"
-
-[node name="Restart" type="Button" parent="gameOverControl/GameOver/VBoxContainer"]
-layout_mode = 2
-text = "RESTART"
-
-[node name="MainMenu" type="Button" parent="gameOverControl/GameOver/VBoxContainer"]
-layout_mode = 2
-text = "Main Menu"
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_lnb45")]
 position = Vector2(-131, 457)
 
@@ -635,9 +602,42 @@ pipe = NodePath("../Pipe")
 index = 1
 
 [node name="Button" parent="." node_paths=PackedStringArray("pipe") instance=ExtResource("6_yy1bn")]
-position = Vector2(168, 336)
+position = Vector2(50, 431)
 pipe = NodePath("../Pipe")
 
+[node name="gameOverControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = 326.0
+offset_right = 441.0
+offset_bottom = 608.0
+script = ExtResource("8_i4jjt")
+
+[node name="GameOver" type="MarginContainer" parent="gameOverControl"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 510.0
+offset_bottom = 282.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="gameOverControl/GameOver"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="gameOverControl/GameOver/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GAME OVER"
+
+[node name="Restart" type="Button" parent="gameOverControl/GameOver/VBoxContainer"]
+layout_mode = 2
+text = "RESTART"
+
+[node name="MainMenu" type="Button" parent="gameOverControl/GameOver/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="area_entered" from="water" to="CharacterBody2D" method="_on_water_area_entered"]
 [connection signal="pressed" from="gameOverControl/GameOver/VBoxContainer/Restart" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="gameOverControl/GameOver/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="area_entered" from="water" to="CharacterBody2D" method="_on_water_area_entered"]
