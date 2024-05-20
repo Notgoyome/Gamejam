@@ -122,7 +122,6 @@ animations = [{
 position = Vector2(206, 110)
 collision_layer = 2
 script = ExtResource("1_61kfk")
-health = 20
 
 [node name="hot" type="GPUParticles2D" parent="."]
 modulate = Color(0.988235, 0.360784, 0.388235, 0.184314)
