@@ -426,7 +426,6 @@ layer_0/tile_data = PackedInt32Array(2293765, 720896, 0, 2293766, 655360, 0, 229
 position = Vector2(107, 556)
 
 [node name="gameOverControl" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -70.0

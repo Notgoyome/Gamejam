@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bj05n2vnoje5s" path="res://img/8bit-water-ripply.png" id="10_3kr10"]
 [ext_resource type="Texture2D" uid="uid://cjwt5w73tckhw" path="res://img/8bit-water-smallwave.png" id="11_8e18f"]
 [ext_resource type="Texture2D" uid="uid://cbu6b8b4knyrn" path="res://img/8bit-water-texture-sq.png" id="12_xjehr"]
-[ext_resource type="PackedScene" uid="uid://dn8a4iapqbfwh" path="res://prefab/Door2.tscn" id="13_i4psc"]
+[ext_resource type="PackedScene" uid="uid://bwmdby7ilkpmq" path="res://prefab/Door2.tscn" id="13_i4psc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3urls"]
 texture = ExtResource("2_paqw5")
@@ -598,6 +598,7 @@ layer_0/tile_data = PackedInt32Array(1966084, 458752, 1610612743, 1966085, 45875
 
 [node name="Door" parent="Pipe" instance=ExtResource("13_i4psc")]
 position = Vector2(540, 484)
+scene_path_file = "res://scene/stage_05/stage_05.tscn"
 
 [node name="pipe0" type="TileMap" parent="Pipe"]
 position = Vector2(272, 448)

@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://prefab/pipe_script.gd" id="5_facpk"]
 [ext_resource type="PackedScene" uid="uid://dldree3yvcavu" path="res://prefab/torch.tscn" id="5_tjjcj"]
 [ext_resource type="PackedScene" uid="uid://sxghwvjl3l3a" path="res://prefab/Button.tscn" id="6_4n0i1"]
-[ext_resource type="PackedScene" uid="uid://dn8a4iapqbfwh" path="res://prefab/Door2.tscn" id="6_v4cot"]
+[ext_resource type="PackedScene" uid="uid://bwmdby7ilkpmq" path="res://prefab/Door2.tscn" id="6_v4cot"]
 [ext_resource type="Script" path="res://gameOverControl.gd" id="8_f6064"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3urls"]
@@ -626,7 +626,6 @@ scene_path_file = "res://scene/stage_04/stage_04.tscn"
 position = Vector2(-27, 619)
 
 [node name="gameOverControl" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -70.0
