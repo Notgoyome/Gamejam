@@ -101,3 +101,7 @@ func heal(number: int):
 
 func constantheal(boolean : bool):
 	constant_heal = boolean
+
+
+func _on_water_area_entered(area):
+	alive = false
